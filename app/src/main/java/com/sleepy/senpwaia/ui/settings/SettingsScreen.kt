@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
@@ -78,23 +81,25 @@ fun SettingsScreen(navController: NavController) {
             modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
         )
         
+        import androidx.compose.foundation.lazy.itemsIndexed
+        
         val qualities = listOf("360p", "480p", "720p", "1080p")
         var selectedQualityIndex by remember { mutableIntStateOf(qualities.indexOf(quality).takeIf { it >= 0 } ?: 2) }
         
         LazyRow {
-            items(qualities.size) { index ->
+            itemsIndexed(qualities) { index, item ->
                 FilterChip(
-                    selected = index == selectedQualityIndex,
+                    selected = item == quality,
                     onClick = {
                         selectedQualityIndex = index
                         scope.launch {
                             context.dataStore.edit { preferences ->
-                                preferences[stringPreferencesKey("quality")] = qualities[index]
+                                preferences[stringPreferencesKey("quality")] = item
                             }
-                            quality = qualities[index]
+                            quality = item
                         }
                     },
-                    label = { Text(qualities[index]) },
+                    label = { Text(item) },
                     modifier = Modifier.padding(end = 8.dp)
                 )
             }
@@ -112,12 +117,12 @@ fun SettingsScreen(navController: NavController) {
         var selectedAudioIndex by remember { mutableIntStateOf(if (subOrDub == "dub") 1 else 0) }
         
         LazyRow {
-            items(audioOptions.size) { index ->
+            itemsIndexed(audioOptions) { index, item ->
                 FilterChip(
-                    selected = index == selectedAudioIndex,
+                    selected = item.lowercase() == subOrDub,
                     onClick = {
                         selectedAudioIndex = index
-                        val selectedValue = if (index == 1) "dub" else "sub"
+                        val selectedValue = item.lowercase()
                         scope.launch {
                             context.dataStore.edit { preferences ->
                                 preferences[stringPreferencesKey("sub_or_dub")] = selectedValue
@@ -125,7 +130,7 @@ fun SettingsScreen(navController: NavController) {
                             subOrDub = selectedValue
                         }
                     },
-                    label = { Text(audioOptions[index]) },
+                    label = { Text(item) },
                     modifier = Modifier.padding(end = 8.dp)
                 )
             }
