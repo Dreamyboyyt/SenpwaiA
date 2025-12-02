@@ -184,6 +184,7 @@ fun SettingsScreen(navController: NavController) {
                     }
                 }
             )
+        } // Closing parenthesis for the Row
         
         Spacer(modifier = Modifier.height(24.dp))
         
@@ -220,7 +221,7 @@ fun SettingsScreen(navController: NavController) {
                 }
             }
         }
-    }
+    } // Closing bracket for the main Column
 }
 
 private fun openUrl(context: Context, url: String) {
