@@ -15,48 +15,9 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 
+
+
 @OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun DropdownMenuExample(
-    selectedOption: String,
-    onOptionSelected: (String) -> Unit,
-    options: List<String>
-) {
-    var expanded by remember { mutableStateOf(false) }
-
-    ExposedDropdownMenuBox(
-        expanded = expanded,
-        onExpandedChange = { expanded = !expanded }
-    ) {
-        OutlinedTextField(
-            value = selectedOption,
-            onValueChange = {},
-            readOnly = true,
-            label = { Text("Select Quality") },
-            trailingIcon = {
-                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
-            },
-            colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
-            modifier = Modifier.fillMaxWidth()
-        )
-
-        ExposedDropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false }
-        ) {
-            options.forEach { selectionOption ->
-                DropdownMenuItem(
-                    text = { Text(selectionOption) },
-                    onClick = {
-                        onOptionSelected(selectionOption)
-                        expanded = false
-                    }
-                )
-            }
-        }
-    }
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DownloadMenuScreen(
@@ -147,9 +108,9 @@ fun DownloadMenuScreen(
             onOptionSelected = { selectedQuality = it },
             options = Constants.QUALITIES
         )
-
+        
         Spacer(modifier = Modifier.height(16.dp))
-
+        
         // Sub/Dub Selection
         Text(
             text = "Audio Language",
@@ -157,7 +118,7 @@ fun DownloadMenuScreen(
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 8.dp)
         )
-
+        
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
@@ -167,16 +128,16 @@ fun DownloadMenuScreen(
                 onClick = { isDub = false },
                 label = { Text("Sub") }
             )
-
+            
             FilterChip(
                 selected = isDub,
                 onClick = { isDub = true },
                 label = { Text("Dub") }
             )
         }
-
+        
         Spacer(modifier = Modifier.height(24.dp))
-
+        
         // Download Button
         Button(
             onClick = {
@@ -189,48 +150,6 @@ fun DownloadMenuScreen(
                 .height(56.dp)
         ) {
             Text("Start Download")
-        }
-    }
-}
-
-@Composable
-fun DropdownMenuExample(
-    selectedOption: String,
-    onOptionSelected: (String) -> Unit,
-    options: List<String>
-) {
-    var expanded by remember { mutableStateOf(false) }
-
-    ExposedDropdownMenuBox(
-        expanded = expanded,
-        onExpandedChange = { expanded = !expanded }
-    ) {
-        OutlinedTextField(
-            value = selectedOption,
-            onValueChange = {},
-            readOnly = true,
-            label = { Text("Select Quality") },
-            trailingIcon = {
-                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
-            },
-            colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
-            modifier = Modifier
-                .fillMaxWidth()
-        )
-
-        ExposedDropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false }
-        ) {
-            options.forEach { selectionOption ->
-                DropdownMenuItem(
-                    text = { Text(selectionOption) },
-                    onClick = {
-                        onOptionSelected(selectionOption)
-                        expanded = false
-                    }
-                )
-            }
         }
     }
 }

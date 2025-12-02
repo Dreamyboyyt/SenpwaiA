@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
@@ -40,10 +39,11 @@ fun SettingsScreen(navController: NavController) {
     
     // Load settings on first composition
     LaunchedEffect(Unit) {
-        subOrDub = context.dataStore.data.first()[stringPreferencesKey("sub_or_dub")] ?: "sub"
-        quality = context.dataStore.data.first()[stringPreferencesKey("quality")] ?: "720p"
-        allowNotifications = context.dataStore.data.first()[booleanPreferencesKey("allow_notifications")] ?: true
-        ignoreFillers = context.dataStore.data.first()[booleanPreferencesKey("ignore_fillers")] ?: false
+        val data = context.dataStore.data.first()
+        subOrDub = data[stringPreferencesKey("sub_or_dub")] ?: "sub"
+        quality = data[stringPreferencesKey("quality")] ?: "720p"
+        allowNotifications = data[booleanPreferencesKey("allow_notifications")] ?: true
+        ignoreFillers = data[booleanPreferencesKey("ignore_fillers")] ?: false
     }
     
     Column(
@@ -183,7 +183,7 @@ fun SettingsScreen(navController: NavController) {
                     }
                 }
             )
-        }
+        )
         
         Spacer(modifier = Modifier.height(24.dp))
         
