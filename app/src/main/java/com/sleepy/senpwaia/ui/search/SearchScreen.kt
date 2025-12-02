@@ -65,12 +65,7 @@ fun SearchScreen(navController: NavController, query: String? = null, viewModel:
             leadingIcon = {
                 Icon(Icons.Default.Search, contentDescription = "Search")
             },
-            singleLine = true,
-            onImeActionPerformed = {
-                if (searchQuery.isNotBlank()) {
-                    viewModel.searchAnime(searchQuery)
-                }
-            }
+            singleLine = true
         )
 
         // Search button

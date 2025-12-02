@@ -1,0 +1,32 @@
+name: Generate Gradle Wrapper & Zip Project
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Install Gradle 8.11.1
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.11.1
+
+      - name: Generate Gradle wrapper
+        run: gradle wrapper
+
+      - name: Zip entire project recursively
+        run: zip -r sourcecode.zip .
+
+      - name: Upload project artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sourcecode
+          path: sourcecode.zip

@@ -75,8 +75,7 @@ object PaheDecryptor {
         val matchResult = paramRegex.find(pageContent)
         
         if (matchResult != null) {
-            val (fullKey, _, key, v1Str, v2Str, _) = matchResult.destructured
-            val keyStr = _
+            val (fullKey, _, keyStr, v1Str, v2Str, _) = matchResult.destructured
             val v1 = v1Str.toIntOrNull() ?: 0
             val v2 = v2Str.toIntOrNull() ?: 0
             

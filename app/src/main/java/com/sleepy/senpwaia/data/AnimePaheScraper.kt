@@ -61,7 +61,7 @@ class AnimePaheScraper {
         val genres = genreElements.map { it.attr("title") }
 
         // Extract release year
-        val releaseYearElement = document.select('a[href*="/anime/season/"]').first()
+        val releaseYearElement = document.select("a[href*=\"/anime/season/\"]").firstOrNull()
         var releaseYear = 0
         if (releaseYearElement != null) {
             val seasonAndYear = releaseYearElement.attr("title")
