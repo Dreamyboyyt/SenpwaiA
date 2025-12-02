@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -111,12 +110,14 @@ fun SettingsScreen(navController: NavController) {
         )
         
         val audioOptions = listOf("Sub", "Dub")
+        var selectedAudioIndex by remember { mutableIntStateOf(if (subOrDub == "dub") 1 else 0) }
         
         LazyRow {
             itemsIndexed(audioOptions) { index, item ->
                 FilterChip(
                     selected = item.lowercase() == subOrDub,
                     onClick = {
+                        selectedAudioIndex = index
                         val selectedValue = item.lowercase()
                         scope.launch {
                             context.dataStore.edit { preferences ->

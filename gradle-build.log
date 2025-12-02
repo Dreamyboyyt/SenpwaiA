@@ -6,8 +6,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:checkDebugAarMetadata
 > Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
@@ -17,39 +17,27 @@ Daemon will be stopped at the end of the build
 > Task :app:parseDebugLocalResources
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
 > Task :app:javaPreCompileDebug
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
+> Task :app:processDebugResources
 > Task :app:desugarDebugFileDependencies
 > Task :app:mergeDebugJniLibFolders
 > Task :app:checkDebugDuplicateClasses
 > Task :app:mergeDebugNativeLibs
-> Task :app:processDebugManifestForPackage
+
+> Task :app:compileDebugKotlin
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:186:9 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:216:33 Unresolved reference 'openUrl'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:226:1 Modifier 'private' is not applicable to 'local function'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:233:2 Syntax error: Expecting '}'.
+
 > Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
-
-> Task :app:stripDebugDebugSymbols
-Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
-
-> Task :app:processDebugResources
-> Task :app:validateSigningDebug
-> Task :app:writeDebugAppMetadata
-> Task :app:writeDebugSigningConfigVersions
-
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:9 Unresolved reference 'import'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:24 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:32 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:43 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:48 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:61 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:191:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:221:33 Unresolved reference 'openUrl'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:231:1 Modifier 'private' is not applicable to 'local function'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:238:2 Syntax error: Expecting '}'.
 
 FAILURE: Build failed with an exception.
 
@@ -253,5 +241,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 39s
-28 actionable tasks: 28 executed
+BUILD FAILED in 2m 31s
+23 actionable tasks: 23 executed
