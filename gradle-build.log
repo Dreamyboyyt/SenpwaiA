@@ -6,8 +6,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:generateDebugResValues
 > Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
@@ -24,30 +24,36 @@ Daemon will be stopped at the end of the build
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
 > Task :app:desugarDebugFileDependencies
-> Task :app:mergeDebugJniLibFolders
-> Task :app:checkDebugDuplicateClasses
 > Task :app:processDebugManifestForPackage
-> Task :app:mergeDebugNativeLibs
+> Task :app:checkDebugDuplicateClasses
 > Task :app:processDebugResources
 > Task :app:mergeExtDexDebug
+> Task :app:mergeDebugJniLibFolders
 > Task :app:mergeLibDexDebug
+> Task :app:mergeDebugNativeLibs
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
 
 > Task :app:stripDebugDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
 
-> Task :app:validateSigningDebug
-> Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
 
-> Task :app:compileDebugKotlin
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:176:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:236:2 Syntax error: Expecting '}'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:186:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:216:33 Unresolved reference 'openUrl'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:226:1 Modifier 'private' is not applicable to 'local function'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:233:2 Syntax error: Expecting '}'.
-
 > Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:18:1 Conflicting overloads:
+@Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:145:9 Overload resolution ambiguity between candidates:
+@OptIn(...) @Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+@Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:147:52 Unresolved reference 'it'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:196:1 Conflicting overloads:
+@OptIn(...) @Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:204:5 This material API is experimental and is likely to change or to be removed in the future.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:214:17 This material API is experimental and is likely to change or to be removed in the future.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:214:45 This material API is experimental and is likely to change or to be removed in the future.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:216:22 This material API is experimental and is likely to change or to be removed in the future.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:216:50 This material API is experimental and is likely to change or to be removed in the future.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:221:9 This material API is experimental and is likely to change or to be removed in the future.
 
 FAILURE: Build failed with an exception.
 
@@ -251,5 +257,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 23s
+BUILD FAILED in 3m 24s
 28 actionable tasks: 28 executed
