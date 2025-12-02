@@ -6,8 +6,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:generateDebugResValues
 > Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
@@ -31,10 +31,10 @@ Daemon will be stopped at the end of the build
 > Task :app:mergeDebugNativeLibs
 
 > Task :app:compileDebugKotlin
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:186:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:216:33 Unresolved reference 'openUrl'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:226:1 Modifier 'private' is not applicable to 'local function'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:233:2 Syntax error: Expecting '}'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:187:9 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:217:33 Unresolved reference 'openUrl'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:227:1 Modifier 'private' is not applicable to 'local function'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:234:2 Syntax error: Expecting '}'.
 
 > Task :app:mergeExtDexDebug
 > Task :app:compileDebugKotlin FAILED
@@ -241,5 +241,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 31s
+BUILD FAILED in 3m 22s
 23 actionable tasks: 23 executed
