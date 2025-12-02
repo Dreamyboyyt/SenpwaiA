@@ -52,10 +52,21 @@ jobs:
         run: gradle wrapper
 
 
-      - run: chmod +x gradlew && ./gradlew :app:assembleDebug --no-daemon --stacktrace
+      - name: Run Gradle Build
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleDebug --no-daemon --stacktrace > gradle-build.log 2>&1
 
       - uses: actions/upload-artifact@v4
         with:
           name: debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
+      - name: Upload Gradle Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-build-logs
+          path: gradle-build.log
+          if-no-files-found: warn
