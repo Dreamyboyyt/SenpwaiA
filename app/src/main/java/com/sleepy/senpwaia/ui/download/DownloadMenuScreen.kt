@@ -173,7 +173,7 @@ fun DownloadMenuScreen(
                 onClick = { isDub = true },
                 label = { Text("Dub") }
             )
-        )
+        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
