@@ -81,8 +81,6 @@ fun SettingsScreen(navController: NavController) {
             modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
         )
         
-        import androidx.compose.foundation.lazy.itemsIndexed
-        
         val qualities = listOf("360p", "480p", "720p", "1080p")
         var selectedQualityIndex by remember { mutableIntStateOf(qualities.indexOf(quality).takeIf { it >= 0 } ?: 2) }
         
@@ -91,7 +89,6 @@ fun SettingsScreen(navController: NavController) {
                 FilterChip(
                     selected = item == quality,
                     onClick = {
-                        selectedQualityIndex = index
                         scope.launch {
                             context.dataStore.edit { preferences ->
                                 preferences[stringPreferencesKey("quality")] = item
@@ -114,14 +111,12 @@ fun SettingsScreen(navController: NavController) {
         )
         
         val audioOptions = listOf("Sub", "Dub")
-        var selectedAudioIndex by remember { mutableIntStateOf(if (subOrDub == "dub") 1 else 0) }
         
         LazyRow {
             itemsIndexed(audioOptions) { index, item ->
                 FilterChip(
                     selected = item.lowercase() == subOrDub,
                     onClick = {
-                        selectedAudioIndex = index
                         val selectedValue = item.lowercase()
                         scope.launch {
                             context.dataStore.edit { preferences ->

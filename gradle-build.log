@@ -6,8 +6,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:generateDebugResValues
 > Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
@@ -26,35 +26,30 @@ Daemon will be stopped at the end of the build
 > Task :app:desugarDebugFileDependencies
 > Task :app:mergeDebugJniLibFolders
 > Task :app:checkDebugDuplicateClasses
-> Task :app:processDebugManifestForPackage
 > Task :app:mergeDebugNativeLibs
-> Task :app:processDebugResources
+> Task :app:processDebugManifestForPackage
 > Task :app:mergeExtDexDebug
 > Task :app:mergeLibDexDebug
 
 > Task :app:stripDebugDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
 
+> Task :app:processDebugResources
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
 
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:21:1 This annotation is not repeatable.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:106:9 Unresolved reference 'DropdownMenuExample'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:108:52 Unresolved reference 'it'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:9 Unresolved reference 'LazyRow'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:85:13 Unresolved reference 'items'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:85:37 Cannot infer type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:86:17 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:114:9 Unresolved reference 'LazyRow'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:115:13 Unresolved reference 'items'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:115:40 Cannot infer type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:116:17 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:186:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:216:33 Unresolved reference 'openUrl'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:226:1 Modifier 'private' is not applicable to 'local function'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:233:2 Syntax error: Expecting '}'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:9 Unresolved reference 'import'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:24 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:32 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:43 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:48 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:84:61 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:191:9 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:221:33 Unresolved reference 'openUrl'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:231:1 Modifier 'private' is not applicable to 'local function'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:238:2 Syntax error: Expecting '}'.
 
 FAILURE: Build failed with an exception.
 
@@ -258,5 +253,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 33s
+BUILD FAILED in 2m 39s
 28 actionable tasks: 28 executed
