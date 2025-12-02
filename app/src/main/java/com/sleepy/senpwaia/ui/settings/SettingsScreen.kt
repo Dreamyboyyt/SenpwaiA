@@ -40,10 +40,10 @@ fun SettingsScreen(navController: NavController) {
     
     // Load settings on first composition
     LaunchedEffect(Unit) {
-        subOrDub = context.dataStore.getSetting("sub_or_dub", "sub")
-        quality = context.dataStore.getSetting("quality", "720p")
-        allowNotifications = context.dataStore.getBooleanSetting("allow_notifications", true)
-        ignoreFillers = context.dataStore.getBooleanSetting("ignore_fillers", false)
+        subOrDub = context.dataStore.data.first()[stringPreferencesKey("sub_or_dub")] ?: "sub"
+        quality = context.dataStore.data.first()[stringPreferencesKey("quality")] ?: "720p"
+        allowNotifications = context.dataStore.data.first()[booleanPreferencesKey("allow_notifications")] ?: true
+        ignoreFillers = context.dataStore.data.first()[booleanPreferencesKey("ignore_fillers")] ?: false
     }
     
     Column(
@@ -88,7 +88,9 @@ fun SettingsScreen(navController: NavController) {
                     onClick = {
                         selectedQualityIndex = index
                         scope.launch {
-                            context.dataStore.saveSetting("quality", qualities[index])
+                            context.dataStore.edit { preferences ->
+                                preferences[stringPreferencesKey("quality")] = qualities[index]
+                            }
                             quality = qualities[index]
                         }
                     },
@@ -117,7 +119,9 @@ fun SettingsScreen(navController: NavController) {
                         selectedAudioIndex = index
                         val selectedValue = if (index == 1) "dub" else "sub"
                         scope.launch {
-                            context.dataStore.saveSetting("sub_or_dub", selectedValue)
+                            context.dataStore.edit { preferences ->
+                                preferences[stringPreferencesKey("sub_or_dub")] = selectedValue
+                            }
                             subOrDub = selectedValue
                         }
                     },
@@ -145,7 +149,9 @@ fun SettingsScreen(navController: NavController) {
                 checked = allowNotifications,
                 onCheckedChange = { checked ->
                     scope.launch {
-                        context.dataStore.saveBooleanSetting("allow_notifications", checked)
+                        context.dataStore.edit { preferences ->
+                            preferences[booleanPreferencesKey("allow_notifications")] = checked
+                        }
                         allowNotifications = checked
                     }
                 }
@@ -170,7 +176,9 @@ fun SettingsScreen(navController: NavController) {
                 checked = ignoreFillers,
                 onCheckedChange = { checked ->
                     scope.launch {
-                        context.dataStore.saveBooleanSetting("ignore_fillers", checked)
+                        context.dataStore.edit { preferences ->
+                            preferences[booleanPreferencesKey("ignore_fillers")] = checked
+                        }
                         ignoreFillers = checked
                     }
                 }
@@ -212,29 +220,6 @@ fun SettingsScreen(navController: NavController) {
                 }
             }
         }
-    }
-}
-
-// Extension functions to work with DataStore
-private suspend fun DataStore<Preferences>.getSetting(key: String, defaultValue: String): String {
-    val data = this.data.first()
-    return data[stringPreferencesKey(key)] ?: defaultValue
-}
-
-private suspend fun DataStore<Preferences>.getBooleanSetting(key: String, defaultValue: Boolean): Boolean {
-    val data = this.data.first()
-    return data[booleanPreferencesKey(key)] ?: defaultValue
-}
-
-private suspend fun DataStore<Preferences>.saveSetting(key: String, value: String) {
-    this.edit { preferences ->
-        preferences[stringPreferencesKey(key)] = value
-    }
-}
-
-private suspend fun DataStore<Preferences>.saveBooleanSetting(key: String, value: Boolean) {
-    this.edit { preferences ->
-        preferences[booleanPreferencesKey(key)] = value
     }
 }
 

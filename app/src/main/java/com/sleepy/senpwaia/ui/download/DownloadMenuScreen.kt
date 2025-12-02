@@ -15,6 +15,7 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DropdownMenuExample(
     selectedOption: String,
