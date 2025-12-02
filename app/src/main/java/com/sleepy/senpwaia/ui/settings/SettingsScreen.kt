@@ -216,29 +216,29 @@ fun SettingsScreen(navController: NavController) {
 }
 
 // Extension functions to work with DataStore
-private suspend fun DataStore<Preferences>.getSetting(key: String, defaultValue: String): String {
+suspend fun DataStore<Preferences>.getSetting(key: String, defaultValue: String): String {
     val data = this.data.first()
     return data[stringPreferencesKey(key)] ?: defaultValue
 }
 
-private suspend fun DataStore<Preferences>.getBooleanSetting(key: String, defaultValue: Boolean): Boolean {
+suspend fun DataStore<Preferences>.getBooleanSetting(key: String, defaultValue: Boolean): Boolean {
     val data = this.data.first()
     return data[booleanPreferencesKey(key)] ?: defaultValue
 }
 
-private suspend fun DataStore<Preferences>.saveSetting(key: String, value: String) {
+suspend fun DataStore<Preferences>.saveSetting(key: String, value: String) {
     this.edit { preferences ->
         preferences[stringPreferencesKey(key)] = value
     }
 }
 
-private suspend fun DataStore<Preferences>.saveBooleanSetting(key: String, value: Boolean) {
+suspend fun DataStore<Preferences>.saveBooleanSetting(key: String, value: Boolean) {
     this.edit { preferences ->
         preferences[booleanPreferencesKey(key)] = value
     }
 }
 
-private fun openUrl(context: Context, url: String) {
+fun openUrl(context: Context, url: String) {
     try {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         context.startActivity(intent)

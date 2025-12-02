@@ -107,10 +107,10 @@ class DownloadWorker(
     private val appContext: android.content.Context,
     workerParams: WorkerParameters
 ) : CoroutineWorker(appContext, workerParams) {
-    
+
     companion object {
         const val KEY_DOWNLOAD_REQUEST = "download_request"
-        
+
         fun buildData(downloadRequest: DownloadRequest): androidx.work.Data {
             return androidx.work.Data.Builder()
                 .putString("animeId", downloadRequest.animeId)
@@ -123,9 +123,10 @@ class DownloadWorker(
                 .build()
         }
     }
-    
+
     private val scraper = AnimePaheScraper()
-    
+    private val okHttpClient = OkHttpClient()
+
     override suspend fun doWork(): Result {
         return try {
             val animeId = inputData.getString("animeId") ?: return Result.failure()

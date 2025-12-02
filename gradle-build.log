@@ -6,8 +6,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
 > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:checkDebugAarMetadata
 > Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
@@ -17,68 +17,45 @@ Daemon will be stopped at the end of the build
 > Task :app:parseDebugLocalResources
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
-> Task :app:processDebugManifestForPackage
 > Task :app:javaPreCompileDebug
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
-> Task :app:processDebugResources
 > Task :app:desugarDebugFileDependencies
-> Task :app:mergeDebugJniLibFolders
+> Task :app:processDebugManifestForPackage
 > Task :app:checkDebugDuplicateClasses
+> Task :app:processDebugResources
+> Task :app:mergeExtDexDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugNativeLibs
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so.
 
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/data/AnimePaheScraper.kt:64:43 Overload resolution ambiguity between candidates:
-fun select(p0: String!): Elements!
-fun select(p0: Evaluator!): Elements!
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/data/AnimePaheScraper.kt:64:50 Too many characters in a character literal.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/data/AnimePaheScraper.kt:64:79 Overload resolution ambiguity between candidates:
-fun <T> Array<out T>.first(): T
-fun BooleanArray.first(): Boolean
-fun ByteArray.first(): Byte
-fun CharArray.first(): Char
-fun DoubleArray.first(): Double
-fun FloatArray.first(): Float
-fun IntArray.first(): Int
-fun LongArray.first(): Long
-fun ShortArray.first(): Short
-fun <T> Iterable<T>.first(): T
-fun <T> List<T>.first(): T
-@SinceKotlin(...) @ExperimentalUnsignedTypes() @InlineOnly() fun UByteArray.first(): UByte
-@SinceKotlin(...) @ExperimentalUnsignedTypes() @InlineOnly() fun UIntArray.first(): UInt
-@SinceKotlin(...) @ExperimentalUnsignedTypes() @InlineOnly() fun ULongArray.first(): ULong
-@SinceKotlin(...) @ExperimentalUnsignedTypes() @InlineOnly() fun UShortArray.first(): UShort
-@SinceKotlin(...) fun CharProgression.first(): Char
-@SinceKotlin(...) fun IntProgression.first(): Int
-@SinceKotlin(...) fun LongProgression.first(): Long
-@SinceKotlin(...) fun UIntProgression.first(): UInt
-@SinceKotlin(...) fun ULongProgression.first(): ULong
-fun <T> Sequence<T>.first(): T
-fun CharSequence.first(): Char
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/data/AnimePaheScraper.kt:67:52 Unresolved reference 'attr'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:15:22 Unresolved reference 'OutOfQuorumException'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:209:13 Unresolved reference 'okHttpClient'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:209:59 Cannot infer type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:210:31 Unresolved reference 'isSuccessful'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:215:42 Unresolved reference 'body'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:218:26 Unresolved reference 'body'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:218:52 Cannot infer type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:224:44 Unresolved reference 'read'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:224:62 Cannot infer type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:224:81 'operator' modifier is required on 'FirNamedFunctionSymbol kotlin/compareTo' in 'compareTo'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:100:9 Unresolved reference 'DropdownMenuExample'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:102:52 Unresolved reference 'it'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:131:9 Syntax error: Expecting an element.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:191:2 Syntax error: Expecting '}'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/search/SearchScreen.kt:58:9 None of the following candidates is applicable:
-@Composable() @ComposableInferredTarget(...) fun OutlinedTextField(value: TextFieldValue, onValueChange: (TextFieldValue) -> Unit, modifier: Modifier = ..., enabled: Boolean = ..., readOnly: Boolean = ..., textStyle: TextStyle = ..., label: @Composable() ComposableFunction0<Unit>? = ..., placeholder: @Composable() ComposableFunction0<Unit>? = ..., leadingIcon: @Composable() ComposableFunction0<Unit>? = ..., trailingIcon: @Composable() ComposableFunction0<Unit>? = ..., prefix: @Composable() ComposableFunction0<Unit>? = ..., suffix: @Composable() ComposableFunction0<Unit>? = ..., supportingText: @Composable() ComposableFunction0<Unit>? = ..., isError: Boolean = ..., visualTransformation: VisualTransformation = ..., keyboardOptions: KeyboardOptions = ..., keyboardActions: KeyboardActions = ..., singleLine: Boolean = ..., maxLines: Int = ..., minLines: Int = ..., interactionSource: MutableInteractionSource? = ..., shape: Shape = ..., colors: TextFieldColors = ...): Unit
-@Composable() @ComposableInferredTarget(...) fun OutlinedTextField(value: String, onValueChange: (String) -> Unit, modifier: Modifier = ..., enabled: Boolean = ..., readOnly: Boolean = ..., textStyle: TextStyle = ..., label: @Composable() ComposableFunction0<Unit>? = ..., placeholder: @Composable() ComposableFunction0<Unit>? = ..., leadingIcon: @Composable() ComposableFunction0<Unit>? = ..., trailingIcon: @Composable() ComposableFunction0<Unit>? = ..., prefix: @Composable() ComposableFunction0<Unit>? = ..., suffix: @Composable() ComposableFunction0<Unit>? = ..., supportingText: @Composable() ComposableFunction0<Unit>? = ..., isError: Boolean = ..., visualTransformation: VisualTransformation = ..., keyboardOptions: KeyboardOptions = ..., keyboardActions: KeyboardActions = ..., singleLine: Boolean = ..., maxLines: Int = ..., minLines: Int = ..., interactionSource: MutableInteractionSource? = ..., shape: Shape = ..., colors: TextFieldColors = ...): Unit
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/search/SearchScreen.kt:60:45 Unresolved reference 'it'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/search/SearchScreen.kt:61:23 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/search/SearchScreen.kt:66:17 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:208:13 Unresolved reference 'okHttpClient'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:208:59 Cannot infer type for this parameter. Please specify it explicitly.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:209:31 Unresolved reference 'isSuccessful'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:214:42 Unresolved reference 'body'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:217:26 Unresolved reference 'body'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:217:52 Cannot infer type for this parameter. Please specify it explicitly.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:223:44 Unresolved reference 'read'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:223:62 Cannot infer type for this parameter. Please specify it explicitly.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/services/DownloadServices.kt:223:81 'operator' modifier is required on 'FirNamedFunctionSymbol kotlin/compareTo' in 'compareTo'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:103:9 Unresolved reference 'DropdownMenuExample'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:105:52 Unresolved reference 'it'.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:134:9 Syntax error: Expecting an element.
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:154:1 Conflicting overloads:
+@Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:196:1 Conflicting overloads:
+@Composable() fun DropdownMenuExample(selectedOption: String, onOptionSelected: (String) -> Unit, options: List<String>): Unit
+e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/download/DownloadMenuScreen.kt:236:2 Syntax error: Expecting '}'.
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:43:38 Unresolved reference 'getSetting'.
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:44:37 Unresolved reference 'getSetting'.
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:45:48 Unresolved reference 'getBooleanSetting'.
@@ -95,9 +72,6 @@ e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpw
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:235:1 Modifier 'private' is not applicable to 'local function'.
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:241:1 Modifier 'private' is not applicable to 'local function'.
 e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/ui/settings/SettingsScreen.kt:248:2 Syntax error: Expecting '}'.
-e: file:///home/runner/work/SenpwaiA/SenpwaiA/app/src/main/java/com/sleepy/senpwaia/utils/PaheDecryptor.kt:79:26 Unresolved reference '_'.
-
-> Task :app:mergeExtDexDebug
 
 FAILURE: Build failed with an exception.
 
@@ -301,5 +275,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 4m 8s
-23 actionable tasks: 23 executed
+BUILD FAILED in 2m 30s
+28 actionable tasks: 28 executed
