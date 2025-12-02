@@ -9,7 +9,8 @@ env:
   ANDROID_BUILD_TOOLS: "36.0.0"
   ANDROID_PLATFORM:    "android-35"
 
-jobs:                                                   build:
+jobs:
+  build:
     name: Build APK
     runs-on: ubuntu-latest
     outputs:
